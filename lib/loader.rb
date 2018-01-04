@@ -1,11 +1,13 @@
 require './violation'
 
-module Loader
+class Loader
 
   def load_csv
-    CSV.foreach 'customers.csv', headers: true, header_converters: :symbol do |row|
+    CSV.readlines('./Violations-2012.csv', headers: true, header_converters: :symbol) do |row|
       Violation.new(row)
     end
   end
+
+
 
 end

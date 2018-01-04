@@ -7,6 +7,4 @@ class Violation
     @violation_category = data[:violation_category]
   end
 
-
-
 end
