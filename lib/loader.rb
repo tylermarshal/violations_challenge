@@ -1,4 +1,5 @@
-require './violation'
+require './lib/violation'
+require 'csv'
 
 class Loader
 
@@ -10,7 +11,7 @@ class Loader
 
   def load_csv
     CSV.readlines('./Violations-2012.csv', headers: true, header_converters: :symbol) do |row|
-      violations << Violation.new(row)
+      @violations << Violation.new(row)
     end
   end
 
